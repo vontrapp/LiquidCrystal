@@ -1,0 +1,11 @@
+This library is based heavily on the arduino core library of the same name
+
+It should remain 100% code compatible with that library, from the API perspective.
+
+Support is added to use shift registers to drive the LCD, as well as a custom callback function
+to handle pushing bits to the LCD in any imaginable way. The library handles all everything about what
+to send and when, and the callback only sets the actual pins and the pulsing of the enable pin.
+
+To accomplish this, the main difference is that the send function no longer always sends a full command or
+byte of data, but sends a "chunk" of data, according to 4 bit or 8 bit mode. This allows even initialization
+sequences to be sent through the "send" function and therefore the callback as well, if used.
