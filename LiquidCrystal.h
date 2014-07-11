@@ -50,6 +50,14 @@ public:
   LiquidCrystal(uint8_t rs, uint8_t enable,
                 uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3);
 
+  // shift register pins as follows
+  // 0 - enable
+  // 1 - rs
+  // 2 - rw
+  // 3 - d0
+  // 4 - d1
+  // 5 - d2
+  // 6 - d3
   // shift registers
   LiquidCrystal(uint8_t shiftdata, uint8_t shiftclock, uint8_t shiftlatch);
   // latch can be 255 (-1) to indicate a non-latching register when a separate enable pin is given
@@ -62,7 +70,7 @@ public:
   // * set the rs pin to mode
   // * r/w must be low
   // * pulse the enable pin, >450ns high then low again
-  LiquidCrystal(uint8_t (*func)(uint8_t value, uint8_t mode, uint8_t nbits), uint8_t nbits);
+  LiquidCrystal(void (*func)(uint8_t value, uint8_t mode, uint8_t nbits), uint8_t nbits);
 
   void init(uint8_t ctl/*LCDCTL_*/, uint8_t rs, uint8_t rw, uint8_t enable,
             uint8_t d0, uint8_t d1, uint8_t d2, uint8_t d3,
