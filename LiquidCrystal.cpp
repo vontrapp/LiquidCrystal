@@ -127,7 +127,7 @@ void LiquidCrystal::init(uint8_t ctl, uint8_t rs, uint8_t rw, uint8_t enable,
   else
     _displayfunction = 0;
 
-  begin(16, 1);
+  _displaycontrol = 0;
 }
 
 void LiquidCrystal::begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
