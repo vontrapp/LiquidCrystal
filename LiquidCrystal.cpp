@@ -67,7 +67,7 @@ LiquidCrystal::LiquidCrystal(uint8_t enable, uint8_t shiftdata, uint8_t shiftclo
   init(ctl, 1, 2, enable, 3, 4, 5, 6, 7, 8, 9, 10, shiftdata, shiftclock, shiftlatch);
 }
 
-LiquidCrystal::LiquidCrystal(uint8_t (*func)(uint8_t, uint8_t, uint8_t), uint8_t nbits)
+LiquidCrystal::LiquidCrystal(void (*func)(uint8_t, uint8_t, uint8_t), uint8_t nbits)
 {
   uint8_t ctl = _BV(LCDCTL_CUSTOM);
   if (nbits == 8) {

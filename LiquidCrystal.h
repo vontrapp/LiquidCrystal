@@ -113,7 +113,7 @@ private:
   uint8_t _data_pins[8];
   uint8_t _shiftdata, _shiftclock, _shiftlatch;
   uint8_t _ctlmode;
-  uint8_t (*_write_callback)(uint8_t value, uint8_t mode, uint8_t nbits);
+  void (*_write_callback)(uint8_t value, uint8_t mode, uint8_t nbits);
 
   uint8_t _displayfunction;
   uint8_t _displaycontrol;
